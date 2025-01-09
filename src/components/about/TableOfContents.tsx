@@ -37,16 +37,12 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
   return (
     <Flex
       style={{
-        left: '0',
-        top: '50%',
-        transform: 'translateY(-50%)',
         whiteSpace: 'nowrap',
       }}
-      position="fixed"
       paddingLeft="24"
       gap="32"
       direction="column"
-      hide="m"
+      hide="s"
     >
       {structure
         .filter((section) => section.display)
@@ -66,7 +62,6 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
               <>
                 {section.items.map((item, itemIndex) => (
                   <Flex
-                    hide="l"
                     key={itemIndex}
                     style={{ cursor: 'pointer' }}
                     className={styles.hover}
