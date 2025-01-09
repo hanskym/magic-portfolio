@@ -1,4 +1,4 @@
-import { Flex, Heading } from '@/once-ui/components';
+import { Flex, Heading, RevealFx } from '@/once-ui/components';
 import { Mailchimp } from '@/components';
 import { Posts } from '@/components/blog/Posts';
 import { baseURL, renderContent } from '@/app/resources';
@@ -66,14 +66,16 @@ export default function Blog({ params: { locale } }: { params: { locale: string 
           }),
         }}
       />
-      <Heading marginBottom="l" variant="display-strong-s">
-        {blog.title}
-      </Heading>
-      <Flex fillWidth flex={1} direction="column">
-        <Posts range={[1, 3]} locale={locale} thumbnail />
-        <Posts range={[4]} columns="2" locale={locale} />
-      </Flex>
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
+      <RevealFx translateY="4">
+        <Heading marginBottom="l" variant="display-strong-s">
+          {blog.title}
+        </Heading>
+        <Flex fillWidth flex={1} direction="column">
+          <Posts range={[1, 3]} locale={locale} thumbnail />
+          <Posts range={[4]} columns="2" locale={locale} />
+        </Flex>
+        {newsletter.display && <Mailchimp newsletter={newsletter} />}
+      </RevealFx>
     </Flex>
   );
 }

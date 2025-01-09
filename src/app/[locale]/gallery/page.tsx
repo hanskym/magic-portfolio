@@ -1,4 +1,4 @@
-import { Flex } from '@/once-ui/components';
+import { Flex, RevealFx } from '@/once-ui/components';
 import MasonryGrid from '@/components/gallery/MasonryGrid';
 import { baseURL, renderContent } from '@/app/resources';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -68,7 +68,9 @@ export default function Gallery({ params: { locale } }: { params: { locale: stri
           }),
         }}
       />
-      <MasonryGrid />
+      <RevealFx translateY="4">
+        <MasonryGrid />
+      </RevealFx>
     </Flex>
   );
 }
