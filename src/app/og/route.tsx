@@ -63,6 +63,7 @@ export async function GET(request: Request) {
                 objectFit: 'cover',
                 borderRadius: '100%',
               }}
+              alt="avatar"
             />
             <div
               style={{

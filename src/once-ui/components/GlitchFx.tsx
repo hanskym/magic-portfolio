@@ -59,6 +59,7 @@ const GlitchFx = forwardRef<HTMLDivElement, GlitchFxProps>(
         const glitchInterval = setInterval(triggerGlitch, interval);
         return () => clearInterval(glitchInterval);
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [trigger, interval]);
 
     const speedClass = styles[speed];

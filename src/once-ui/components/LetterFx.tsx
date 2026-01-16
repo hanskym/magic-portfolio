@@ -103,6 +103,7 @@ const LetterFx = forwardRef<HTMLSpanElement, LetterFxProps>(
     const [hasAnimated, setHasAnimated] = useState<boolean>(false);
     const originalText = useRef<string>(typeof children === 'string' ? children : '');
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const eventHandler = useCallback(
       createEventHandler(
         originalText.current,
