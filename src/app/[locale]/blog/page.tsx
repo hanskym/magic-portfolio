@@ -66,14 +66,16 @@ export default function Blog({ params: { locale } }: { params: { locale: string 
         }}
       />
       <RevealFx translateY="4">
-        <Heading marginBottom="l" variant="display-strong-s">
-          {blog.title}
-        </Heading>
-        <Flex fillWidth flex={1} direction="column">
-          <Posts range={[1, 3]} locale={locale} thumbnail />
-          <Posts range={[4]} columns="2" locale={locale} />
+        <Flex fillWidth direction="column">
+          <Heading marginBottom="l" variant="display-strong-s">
+            {blog.title}
+          </Heading>
+          <Flex fillWidth flex={1} direction="column">
+            <Posts range={[1, 3]} locale={locale} thumbnail />
+            <Posts range={[4]} columns="2" locale={locale} />
+          </Flex>
+          {newsletter.display && <Mailchimp newsletter={newsletter} />}
         </Flex>
-        {newsletter.display && <Mailchimp newsletter={newsletter} />}
       </RevealFx>
     </Flex>
   );
