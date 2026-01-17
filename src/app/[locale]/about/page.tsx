@@ -13,7 +13,7 @@ import {
 import { baseURL, renderContent } from '@/app/resources';
 import TableOfContents from '@/components/about/TableOfContents';
 import styles from '@/components/about/about.module.scss';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
@@ -48,7 +48,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 }
 
 export default function About({ params: { locale } }: { params: { locale: string } }) {
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = useTranslations();
   const { person, about, social } = renderContent(t);
   const structure = [
