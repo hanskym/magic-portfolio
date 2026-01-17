@@ -8,8 +8,7 @@ import styles from './Switch.module.scss';
 import commonStyles from './SharedInteractiveStyles.module.scss';
 
 interface SwitchProps
-  extends Omit<InteractiveDetailsProps, 'onClick'>,
-    React.InputHTMLAttributes<HTMLInputElement> {
+  extends Omit<InteractiveDetailsProps, 'onClick'>, React.InputHTMLAttributes<HTMLInputElement> {
   style?: React.CSSProperties;
   className?: string;
   isChecked: boolean;

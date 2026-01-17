@@ -6,8 +6,7 @@ import { Flex, InteractiveDetails, InteractiveDetailsProps } from '.';
 import styles from './SharedInteractiveStyles.module.scss';
 
 interface RadioButtonProps
-  extends Omit<InteractiveDetailsProps, 'onClick'>,
-    React.InputHTMLAttributes<HTMLInputElement> {
+  extends Omit<InteractiveDetailsProps, 'onClick'>, React.InputHTMLAttributes<HTMLInputElement> {
   style?: React.CSSProperties;
   className?: string;
   isChecked?: boolean;

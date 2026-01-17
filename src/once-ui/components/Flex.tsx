@@ -15,7 +15,8 @@ import {
 import { TextVariant, SpacingToken, ColorScheme, ColorWeight } from '../types';
 
 interface ComponentProps
-  extends FlexProps,
+  extends
+    FlexProps,
     SpacingProps,
     SizeProps,
     StyleProps,

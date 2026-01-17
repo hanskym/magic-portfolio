@@ -17,7 +17,8 @@ import { SpacingToken, ColorScheme, ColorWeight } from '../types';
 import styles from './Grid.module.scss';
 
 interface ComponentProps
-  extends GridProps,
+  extends
+    GridProps,
     SpacingProps,
     SizeProps,
     StyleProps,

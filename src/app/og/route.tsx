@@ -16,88 +16,86 @@ export async function GET(request: Request) {
   const { person } = renderContent(t);
 
   return new ImageResponse(
-    (
+    <div
+      style={{
+        display: 'flex',
+        width: '100%',
+        height: '100%',
+        padding: '8rem',
+        background: '#151515',
+      }}
+    >
       <div
         style={{
           display: 'flex',
-          width: '100%',
-          height: '100%',
-          padding: '8rem',
-          background: '#151515',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          gap: '4rem',
+          fontFamily: 'Inter',
+          fontStyle: 'normal',
+          color: 'white',
         }}
       >
+        <span
+          style={{
+            fontSize: '8rem',
+            lineHeight: '8rem',
+            letterSpacing: '-0.05em',
+            whiteSpace: 'pre-wrap',
+            textWrap: 'balance',
+          }}
+        >
+          {title}
+        </span>
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            gap: '4rem',
-            fontFamily: 'Inter',
-            fontStyle: 'normal',
-            color: 'white',
+            alignItems: 'center',
+            gap: '5rem',
           }}
         >
-          <span
+          <img
+            src={'https://' + baseURL + person.avatar}
             style={{
-              fontSize: '8rem',
-              lineHeight: '8rem',
-              letterSpacing: '-0.05em',
-              whiteSpace: 'pre-wrap',
-              textWrap: 'balance',
+              width: '12rem',
+              height: '12rem',
+              objectFit: 'cover',
+              borderRadius: '100%',
             }}
-          >
-            {title}
-          </span>
+            alt="avatar"
+          />
           <div
             style={{
               display: 'flex',
-              alignItems: 'center',
-              gap: '5rem',
+              flexDirection: 'column',
+              gap: '0.75rem',
             }}
           >
-            <img
-              src={'https://' + baseURL + person.avatar}
+            <span
               style={{
-                width: '12rem',
-                height: '12rem',
-                objectFit: 'cover',
-                borderRadius: '100%',
-              }}
-              alt="avatar"
-            />
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.75rem',
+                fontSize: '4.5rem',
+                lineHeight: '4.5rem',
+                whiteSpace: 'pre-wrap',
+                textWrap: 'balance',
               }}
             >
-              <span
-                style={{
-                  fontSize: '4.5rem',
-                  lineHeight: '4.5rem',
-                  whiteSpace: 'pre-wrap',
-                  textWrap: 'balance',
-                }}
-              >
-                {person.name}
-              </span>
-              <span
-                style={{
-                  fontSize: '2.5rem',
-                  lineHeight: '2.5rem',
-                  whiteSpace: 'pre-wrap',
-                  textWrap: 'balance',
-                  opacity: '0.6',
-                }}
-              >
-                {person.role}
-              </span>
-            </div>
+              {person.name}
+            </span>
+            <span
+              style={{
+                fontSize: '2.5rem',
+                lineHeight: '2.5rem',
+                whiteSpace: 'pre-wrap',
+                textWrap: 'balance',
+                opacity: '0.6',
+              }}
+            >
+              {person.role}
+            </span>
           </div>
         </div>
       </div>
-    ),
+    </div>,
     {
       width: 1920,
       height: 1080,
